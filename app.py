@@ -13,7 +13,7 @@ y = data["Strength"]
 model = RandomForestRegressor()
 model.fit(X,y)
 
-st.title("AI Concrete Mix Analyzer")
+st.title("Concrete Catalyst Mix Designer")
 
 st.subheader("Enter Concrete Mix")
 
