@@ -31,8 +31,7 @@ wbinder = water/(cement+flyash+ggbs+0.0001)
 
 if st.button("Analyze Mix"):
 
-    input_data = pd.DataFrame([[cement,water,flyash,ggbs,gravel,sand,sp,wbinder,wc,age]],
-                              columns=X.columns)
+   input_data = pd.DataFrame([[cement,water,wc,wbinder,sand,gravel,sp,flyash,ggbs,age]], columns=X.columns)
 
     prediction = model.predict(input_data)[0]
 
@@ -63,7 +62,7 @@ if st.button("Analyze Mix"):
         wcx = w/c
         wb = w/(c+fa+g+0.0001)
 
-        row = [c,w,fa,g,gr,s,spx,wb,wcx,age]
+        row = [c,w,wcx,wb,s,gr,spx,fa,g,age]
 
         pred = model.predict(pd.DataFrame([row],columns=X.columns))[0]
 
